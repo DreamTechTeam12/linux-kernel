@@ -1024,6 +1024,17 @@ void start_kernel(void)
 	boot_cpu_init();
 	page_address_init();
 	pr_notice("%s", linux_banner);
+
+	/* MY CUSTOM MESSAGE (From Turkiye!) */
+	pr_info("\n");
+	pr_info("Hey, Tux is better now!! :)\n");
+	pr_info("Hello Mr. Torvalds! This is my first kernel modification.. Please do not remove it!\n");
+	pr_info("Love from Turkiye! [NAME:linuxcuadam] [AGE:15]\n");
+	pr_info("\n");
+	pr_info("Waking him up in 5 seconds!\n");
+	mdelay(5000);
+
+	
 	setup_arch(&command_line);
 	/* Static keys and static calls are needed by LSMs */
 	jump_label_init();
