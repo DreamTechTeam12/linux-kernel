@@ -1024,7 +1024,7 @@ void start_kernel(void)
 	boot_cpu_init();
 	page_address_init();
 	pr_notice("%s", linux_banner);
-
+	setup_arch(&command_line);	
 	/* MY CUSTOM MESSAGE (From Turkiye!) */
 	pr_info("\n");
 	pr_info("Hey, Tux is better now!! :)\n");
@@ -1034,8 +1034,6 @@ void start_kernel(void)
 	pr_info("Waking him up in 5 seconds!\n");
 	mdelay(5000);
 
-
-	setup_arch(&command_line);	
 	/* Static keys and static calls are needed by LSMs */
 	jump_label_init();
 	static_call_init();
