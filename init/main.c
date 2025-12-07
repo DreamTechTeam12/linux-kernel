@@ -1007,6 +1007,18 @@ void start_kernel(void)
 	char *command_line;
 	char *after_dashes;
 
+    /* === Easter Egg: Boot ASCII === */
+    pr_info("  (._.)\n");
+    pr_info(" <)   )╯  Im at your behind.\n");
+    pr_info("  /   \\\n");
+
+    msleep(1500);
+
+    pr_info("Just kidding! Booting Linux Kernel...\n");
+
+    msleep(1000);
+
+
 	set_task_stack_end_magic(&init_task);
 	smp_setup_processor_id();
 	debug_objects_early_init();
